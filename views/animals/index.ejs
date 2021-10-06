@@ -3,6 +3,7 @@
   <%- include("../partials/head.ejs") %>
 
   <body>
+    <a href="/animals/new"><button>Create A New Animal</button></a>
     <%- include("../partials/header.ejs") %>
     <main>
       <div>
@@ -20,7 +21,7 @@
                 Location: <%= animal.location %>
                 </p>
                 <p>
-                Life Expectancy: <%= animal.lifeExpectancy %>
+                Life Expectancy: <%= animal.lifeExpectancy %> years
                 </p>
         </article>
 

@@ -40,17 +40,14 @@ app.use(methodOverride("_method"))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static("public"))
 
+// Routes ///
+
+
 app.get("/", (req, res) => {
     res.send("Welcome to the Animals App!")
 })
 
-app.get("/animals", (req, res) => {
-    Animal.find({}, (err, animals) => {
-      res.render("animals/index.ejs", { animals });
-    });
-  });
-
-app.get("/animals/seed", (req, res) => {
+app.get("/seed", (req, res) => {
     const starterAnimals = [
           { species: "Tiger", extinct: false, location: "Africa", lifeExpectancy: 20},
           { species: "Dog", extinct: false, location: "Global", lifeExpectancy: 10},
@@ -61,6 +58,23 @@ app.get("/animals/seed", (req, res) => {
           res.json(data);
         }
       );
+    })
+})
+
+app.get("/animals", (req, res) => {
+    Animal.find({}, (err, animals) => {
+      res.render("animals/index.ejs", { animals });
+    });
+  });
+
+app.get("/animals/new", (req, res) => {
+    res.render("animals/new.ejs")
+})
+
+app.post("/animals", (req, res) => {
+    req.body.extinct = req.body.extinct === "on" ? true : false
+    Animal.create(req.body, (err, animal) => {
+        res.redirect("/animals")
     })
 })
 
