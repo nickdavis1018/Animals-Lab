@@ -2,14 +2,15 @@
 <html lang="en">
   <%- include("../partials/head.ejs") %>
 
-  <body>
-    <a href="/animals/new"><button>Create A New Animal</button></a>
+  <body><div id="banner">
     <%- include("../partials/header.ejs") %>
     <main>
+    <a href="/animals/new"><button>Create A New Animal</button></a>
+    <a href="/animals/reset"><button>Reset Animals Database</button></a></div>
       <div>
         <% for (animal of animals) { %>
 
-        <article>
+        <article id="index-article">
           <a href="/animals/<%= animal._id %>">
             <h2>
               <%= animal.species %>
@@ -21,7 +22,7 @@
                 Location: <%= animal.location %>
                 </p>
                 <p>
-                Life Expectancy: <%= animal.lifeExpectancy %> years
+                Life Expectancy (years): <%= animal.lifeExpectancy %>
                 </p>
         </article>
 

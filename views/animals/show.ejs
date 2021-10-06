@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("../partials/head.ejs") %>
-
-  <body>
+  <body><div id="banner">
     <%- include("../partials/header.ejs") %>
     <main>
+    </div>
       <div>
-            <article>
+            <article id="show-article">
                   <h2>
                     <%= animal.species %>
                   </h2>
@@ -17,15 +17,17 @@
                     Location: <%= animal.location %>
                     </p>
                     <p>
-                    Life Expectancy: <%= animal.lifeExpectancy %> years
+                    Life Expectancy (years): <%= animal.lifeExpectancy %>
                     </p>
           </form>
-          <a href="/animals/"><button>Back to Index</button></a>
+          <a href="/animals/<%= animal._id %>/edit"><button class="buttons">Edit Animal</button></a>
           <form action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete"/>
+          <input type="submit" class="buttons" value="Delete"/>
           </form>
+          <a class="buttons" href="/animals/">
+        <button>Back to Index</button>
+    </a>
         </article>
-
       </div>
     </main>
   </body>

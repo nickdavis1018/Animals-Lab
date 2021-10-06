@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+}
+
+
+.buttons{
+    width: 150px;
+}
+
+h1{
+    background-color: rgb(206, 200, 200);
+    color: #9b4dca;
+}
+
+#banner{
+    background-color: rgb(206, 200, 200);
+    border-bottom: black solid 1px;
+}
+
+#index-article{
+    border: solid black 1px;
+}
+
+#show-article{
+    border-bottom: solid black 1px;
+}
