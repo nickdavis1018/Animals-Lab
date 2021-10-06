@@ -14,14 +14,14 @@
               <%= animal.species %>
             </h2></a>
             <p>
-              <%= animal.extinct ? "Not Exctinct" : "Extinct" %>
-            </p>
-            <p>
-                <%= animal.location %>
+                Status: <%= animal.extinct ? "Extinct" : "Not Extinct" %>
               </p>
               <p>
-                <%= animal.lifeExpectancy %>
-              </p>
+                Location: <%= animal.location %>
+                </p>
+                <p>
+                Life Expectancy: <%= animal.lifeExpectancy %>
+                </p>
         </article>
 
         <% } %>

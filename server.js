@@ -64,5 +64,13 @@ app.get("/animals/seed", (req, res) => {
     })
 })
 
+app.get("/animals/:id", (req, res) => {
+    const id = req.params.id
+    Animal.findById(id, (err, animal) => {
+        res.render("animals/show.ejs", {animal})
+    })
+})
+
+
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Animal Listener Activated on Port #${PORT}`))

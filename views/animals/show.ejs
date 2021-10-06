@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+            <article>
+                  <h2>
+                    <%= animal.species %>
+                  </h2>
+                  <p>
+                    Status: <%= animal.extinct ? "Extinct" : "Not Extinct" %>
+                  </p>
+                  <p>
+                    Location: <%= animal.location %>
+                    </p>
+                    <p>
+                    Life Expectancy: <%= animal.lifeExpectancy %>
+                    </p>
+          </form>
+          <a href="/animals/"><button>Back to Index</button></a>
+        </article>
+
+      </div>
+    </main>
+  </body>
+</html>
